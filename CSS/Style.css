@@ -324,10 +324,12 @@ h2 {
 
     .social-icons {
         gap: 15px; /* Reduce el espaciado entre los íconos en pantallas medianas */
+        justify-content: center;
     }
 
     .social-icon {
         font-size: 1rem; /* Reduce el tamaño de los íconos */
+        align-items: center;
     }
 }
 
@@ -349,10 +351,12 @@ h2 {
     .social-icons {
         flex-direction: column; /* Acomoda los íconos de redes sociales en una columna */
         gap: 10px; /* Reduce el espaciado entre los íconos en pantallas muy pequeñas */
+        justify-content: center;
     }
 
     .social-icon {
         font-size: 1rem; /* Reduce el tamaño de los íconos */
+        align-items: center;
     }
 }
 
@@ -376,5 +380,90 @@ h2 {
 
     .social-icon {
         font-size: 0.9rem; /* Ajusta el tamaño de los íconos */
+    }
+}
+
+/* Estilo para el footer */
+.footer {
+    background-color: #333; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column; /* Establece el contenido en columnas */
+    align-items: center; /* Centra el contenido */
+    gap: 20px; /* Espaciado entre los bloques */
+}
+
+.footer-section {
+    font-size: 1rem;
+}
+
+.footer-section  .social-icon {
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-decoration: none;
+    margin: 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-section .social-icon:hover {
+    color: #0073e6; /* Color al pasar el ratón sobre el icono */
+}
+
+.developer a {
+    color: #ff9900; /* Color del enlace al portafolio */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.developer a:hover {
+    text-decoration: underline; /* Subraya el enlace al pasar el ratón */
+}
+
+/* Media Queries para dispositivos pequeños */
+@media (max-width: 768px) {
+    /* Ajustes para pantallas pequeñas (tabletas y teléfonos) */
+    .footer-container {
+        flex-direction: column; /* En pantallas pequeñas, los elementos se apilan verticalmente */
+        align-items: center; /* Asegura que el contenido esté centrado */
+        gap: 15px; /* Menos espacio entre los bloques */
+    }
+
+    .footer-section {
+        font-size: 0.9rem; /* Reducción del tamaño de la fuente para pantallas más pequeñas */
+    }
+
+    .footer-section .social-icon {
+        font-size: 1.3rem; /* Los íconos se hacen más pequeños para caber mejor */
+        margin: 8px; /* Menor margen entre íconos */
+    }
+
+    .developer a {
+        font-size: 0.9rem; /* Reduce el tamaño del texto para el enlace al portafolio */
+    }
+}
+
+/* Media Queries para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    /* Ajustes para pantallas de teléfonos pequeños */
+    .footer-container {
+        padding: 10px; /* Reduce el padding */
+    }
+
+    .footer-section {
+        font-size: 0.8rem; /* Hace el texto más pequeño en pantallas muy pequeñas */
+    }
+
+    .footer-section .social-icon {
+        font-size: 1.1rem; /* Aún más pequeños los íconos */
+        margin: 5px; /* Ajuste del margen entre íconos */
+    }
+
+    .developer a {
+        font-size: 0.8rem; /* Ajuste del tamaño del enlace para pantallas pequeñas */
     }
 }
