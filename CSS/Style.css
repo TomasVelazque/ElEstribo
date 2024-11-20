@@ -259,3 +259,122 @@ body {
         font-size: 12px;
     }
 }
+
+
+/* Estilo para la sección de contacto */
+.contacto {
+    text-align: center; /* Centra todo el contenido dentro de la sección */
+    padding: 20px;
+}
+
+.contacto-container h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.contacto-container .map-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center; /* Centra el mapa horizontalmente */
+    align-items: center;     /* Centra el mapa verticalmente si el contenedor tiene más altura */
+}
+
+.contacto-container iframe {
+    width: 100%;
+    max-width: 1500px; /* Ajusta el ancho máximo del mapa */
+    height: 450px;
+    border: none; /* Elimina el borde */
+    border-radius: 8px; /* Bordes redondeados para mayor estética */
+}
+
+h2 {
+    margin-top: 40px;
+    font-size: 1.5rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Centra los íconos horizontalmente */
+    gap: 20px; /* Espaciado entre los íconos */
+    margin-top: 20px;
+}
+
+.social-icon {
+    font-size: 1.2rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #0073e6; /* Color al pasar el ratón sobre el icono */
+}
+
+.social-icon i {
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+}
+
+/* Media query para pantallas de 768px o menos */
+@media (max-width: 768px) {
+    .contacto-container iframe {
+        height: 350px; /* Reduce la altura del mapa en pantallas medianas */
+    }
+
+    .social-icons {
+        gap: 15px; /* Reduce el espaciado entre los íconos en pantallas medianas */
+    }
+
+    .social-icon {
+        font-size: 1rem; /* Reduce el tamaño de los íconos */
+    }
+}
+
+/* Media query para pantallas de 480px o menos (teléfonos pequeños) */
+@media (max-width: 480px) {
+    .contacto-container iframe {
+        height: 250px; /* Reduce aún más la altura del mapa para pantallas pequeñas */
+        max-width: 100%; /* Asegura que el mapa ocupe todo el ancho disponible */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Reduce el tamaño del título */
+    }
+
+    h2 {
+        font-size: 1.2rem; /* Reduce el tamaño de la cabecera de redes sociales */
+    }
+
+    .social-icons {
+        flex-direction: column; /* Acomoda los íconos de redes sociales en una columna */
+        gap: 10px; /* Reduce el espaciado entre los íconos en pantallas muy pequeñas */
+    }
+
+    .social-icon {
+        font-size: 1rem; /* Reduce el tamaño de los íconos */
+    }
+}
+
+/* Media query para pantallas de 320px o menos (teléfonos pequeños muy estrechos) */
+@media (max-width: 320px) {
+    .contacto-container iframe {
+        height: 200px; /* Ajusta la altura del mapa para pantallas más pequeñas */
+    }
+
+    h1 {
+        font-size: 1.2rem; /* Ajusta el tamaño del título para pantallas muy pequeñas */
+    }
+
+    h2 {
+        font-size: 1rem; /* Ajusta el tamaño de la cabecera de redes sociales */
+    }
+
+    .social-icons {
+        gap: 8px; /* Reduce aún más el espaciado entre los íconos */
+    }
+
+    .social-icon {
+        font-size: 0.9rem; /* Ajusta el tamaño de los íconos */
+    }
+}
