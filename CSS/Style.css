@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    user-select: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px; /* Espaciado lateral para pantallas pequeñas */
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    transition: transform 0.3s ease;
+}
+
+.navbar ul li {
+    align-items: center;
+    margin: 0 10px;
+}
+
+.navbar ul li a {
+    font-size: 16px;
+    padding: 10px 15px;
+    color: #fffdfc;
+    display: block;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #ce967b;
+}
+
+/* Menú hamburguesa */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    display: block;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* Ocultar menú en móviles */
+#menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    .navbar ul {
+        position: absolute;
+        top: 0; /* Inicia desde la parte superior de la pantalla */
+        left: 0;
+        width: 100%; /* Asegura que ocupe todo el ancho */
+        height: 100vh; /* Ocupa toda la altura de la pantalla */
+        background-color: rgba(0, 0, 0, 0.9); /* Fondo negro con opacidad */
+        flex-direction: column; /* Enlaces apilados verticalmente */
+        align-items: center;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        z-index: 1000; /* Asegura que esté sobre otros elementos */
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+    
+
+    #menu-toggle:checked + .menu-icon + ul {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navbar ul li {
+        margin: 15px 0; /* Espaciado vertical entre enlaces */
+    }
+}
+
+/* Estilos generales */
+.header {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)),
+        url(../Img/FondoCarniceria.jpg);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    text-align: center; /* Centra el texto en pantallas pequeñas */
+    padding: 20px; /* Espaciado interno */
+}
+
+.header-content {
+    text-align: center;
+}
+
+.header-content h1 {
+    font-size: 3rem; /* Tamaño adaptable */
+    line-height: 1.2;
+    color: #f9fafc;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.header-content p {
+    font-size: 1rem; /* Tamaño adaptable */
+    color: #c5c5c5;
+    padding: 0 15px; /* Reduce el padding en pantallas pequeñas */
+    margin-bottom: 20px;
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 480px) {
+
+    .header-content h1 {
+        font-size: 2rem;
+        margin-top: 20px;    
+    }
+
+    .header-content p {
+        font-size: 0.8rem;
+    }
+
+    .btn-1 {
+        font-size: 0.8rem;
+        padding: 8px 15px;
+    }
+
+    .menu-icon {
+        margin-top: 5px;
+    }
+
+}
+
+
+.cortes-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 elementos por fila */
+    gap: 10px; /* Espaciado vertical entre filas */
+    padding: 0px 10px; /* Menos espacio alrededor del contenedor */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    justify-items: center; /* Centra cada cuadro individualmente */
+}
+
+.cortes-container h1 {
+    grid-column: 1 / -1; /* Ocupa toda la fila del grid */
+    text-align: center; /* Centra el texto del título */
+    font-size: 24px; /* Tamaño más destacado */
+    color: #444; /* Color más oscuro para el título */
+    margin-bottom: 15px; /* Espacio debajo del título */
+    margin-top: 30px;
+}
+
+.corte {
+    width: 100%; /* Ajusta al espacio disponible dentro de la columna */
+    max-width: 180px; /* Define un ancho máximo para los cuadros */
+    border: 1px solid #ccc; /* Opcional: un borde para cada cuadro */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Asegura que nada sobresalga del cuadro */
+    text-align: center; /* Centra el contenido */
+    background-color: #f9f9f9; /* Fondo claro para destacar el contenido */
+    padding: 8px; /* Reduce el espacio interno */
+    margin: 0;
+}
+
+.corte img {
+    width: 100%; /* La imagen se ajusta al ancho del cuadro */
+    height: 150px; /* Ajusta esta altura según prefieras */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    border-bottom: 1px solid #ccc; /* Línea divisoria entre imagen y texto */
+}
+
+.corte h3 {
+    margin: 8px 0 4px; /* Reduce espaciado del título */
+    font-size: 16px;
+    color: #333;
+}
+
+.corte p {
+    font-size: 13px; /* Tamaño más compacto */
+    color: #666;
+    margin: 0; /* Elimina márgenes adicionales */
+}
+
+
+/* Media queries para pantallas medianas (tablets) */
+@media (max-width: 1024px) {
+    .cortes-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 elementos por fila */
+    }
+}
+
+/* Media queries para pantallas pequeñas (móviles grandes) */
+@media (max-width: 768px) {
+    .cortes-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 elementos por fila */
+    }
+
+    .corte img {
+        height: 120px; /* Ajusta la altura de las imágenes */
+    }
+}
+
+/* Media queries para pantallas muy pequeñas (móviles pequeños) */
+@media (max-width: 480px) {
+    .cortes-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 elemento por fila */
+    }
+
+    .corte img {
+        height: 100px; /* Ajusta la altura de las imágenes */
+    }
+
+    .corte h3 {
+        font-size: 14px;
+    }
+
+    .corte p {
+        font-size: 12px;
+    }
+}
