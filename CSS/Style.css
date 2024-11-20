@@ -467,3 +467,46 @@ h2 {
         font-size: 0.8rem; /* Ajuste del tamaño del enlace para pantallas pequeñas */
     }
 }
+
+/* Estilo para el icono de WhatsApp */
+.whatsapp-icon {
+    position: fixed; /* Posiciona el icono de forma fija */
+    bottom: 20px; /* Lo coloca 20px por encima del borde inferior */
+    right: 20px; /* Lo coloca 20px a la derecha del borde */
+    background-color: #25d366; /* Color de fondo característico de WhatsApp */
+    border-radius: 50%; /* Hace el icono completamente circular */
+    padding: 15px; /* Ajustamos el padding para hacerlo más proporcional */
+    color: white; /* Color blanco para el icono */
+    font-size: 2.5rem; /* Tamaño del icono más grande */
+    width: 70px; /* Establece un ancho fijo para asegurar la forma circular */
+    height: 70px; /* Establece una altura fija igual al ancho */
+    display: flex;
+    justify-content: center; /* Centra el icono horizontalmente */
+    align-items: center; /* Centra el icono verticalmente */
+    transition: background-color 0.3s ease; /* Efecto de transición al pasar el ratón */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para que resalte */
+}
+
+.whatsapp-icon:hover {
+    background-color: #128c7e; /* Cambia el color al pasar el ratón */
+}
+
+/* Media Query para dispositivos pequeños */
+@media (max-width: 768px) {
+    .whatsapp-icon {
+        width: 60px; /* Reduce el tamaño del icono */
+        height: 60px; /* Ajusta la altura para mantener la proporción */
+        padding: 12px; /* Ajusta el padding */
+        font-size: 2rem; /* Reduce el tamaño del icono */
+    }
+}
+
+/* Media Query para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .whatsapp-icon {
+        width: 50px; /* Reduce aún más el tamaño del icono */
+        height: 50px; /* Ajusta la altura */
+        padding: 10px; /* Ajuste adicional */
+        font-size: 1.8rem; /* Ajuste adicional en pantallas muy pequeñas */
+    }
+}
