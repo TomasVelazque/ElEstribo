@@ -125,5 +125,22 @@
     <a href="https://wa.me/542954734628" target="_blank" class="whatsapp-icon">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+
+    <script>
+        // Selecciona todos los enlaces del menú y el checkbox del menú hamburguesa
+        const menuLinks = document.querySelectorAll('.navbar ul li a');
+        const menuToggle = document.querySelector('#menu-toggle');
+    
+        // Agrega un evento de clic a cada enlace
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Cierra el menú al desmarcar el checkbox
+                if (menuToggle.checked) {
+                    menuToggle.checked = false;
+                }
+            });
+        });
+    </script>
 </body>
 </html>

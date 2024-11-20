@@ -13,12 +13,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px; /* Espaciado lateral para pantallas pequeñas */
-}
-
+/* Menú hamburguesa */
 .menu {
     position: absolute;
     top: 0;
@@ -86,21 +81,19 @@ body {
 
     .navbar ul {
         position: absolute;
-        top: 0; /* Inicia desde la parte superior de la pantalla */
+        top: 60px; /* Añadido un margen superior para evitar que cubra el contenido */
         left: 0;
         width: 100%; /* Asegura que ocupe todo el ancho */
-        height: 100vh; /* Ocupa toda la altura de la pantalla */
+        height: 60vh; /* Ocupa toda la altura de la pantalla */
         background-color: rgba(0, 0, 0, 0.9); /* Fondo negro con opacidad */
         flex-direction: column; /* Enlaces apilados verticalmente */
         align-items: center;
         transform: translateY(-100%);
         opacity: 0;
         visibility: hidden;
-        z-index: 1000; /* Asegura que esté sobre otros elementos */
+        z-index: 1001; /* Asegura que esté sobre otros elementos, pero bajo el encabezado */
         transition: transform 0.3s ease, opacity 0.3s ease;
     }
-    
-    
 
     #menu-toggle:checked + .menu-icon + ul {
         transform: translateY(0);
@@ -111,6 +104,7 @@ body {
     .navbar ul li {
         margin: 15px 0; /* Espaciado vertical entre enlaces */
     }
+
 }
 
 /* Estilos generales */
@@ -128,6 +122,7 @@ body {
     justify-content: center; /* Centra el contenido horizontalmente */
     text-align: center; /* Centra el texto en pantallas pequeñas */
     padding: 20px; /* Espaciado interno */
+    z-index: 999; /* Asegura que la cabecera esté encima del menú */
 }
 
 .header-content {
@@ -295,6 +290,7 @@ h2 {
 .social-icons {
     display: flex;
     justify-content: center; /* Centra los íconos horizontalmente */
+    align-items: center;
     gap: 20px; /* Espaciado entre los íconos */
     margin-top: 20px;
 }
@@ -338,6 +334,8 @@ h2 {
     .contacto-container iframe {
         height: 250px; /* Reduce aún más la altura del mapa para pantallas pequeñas */
         max-width: 100%; /* Asegura que el mapa ocupe todo el ancho disponible */
+        justify-content: center;
+        align-items: center;
     }
 
     h1 {
