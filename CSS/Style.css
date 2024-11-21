@@ -183,7 +183,7 @@ body {
 .cortes-container h1 {
     grid-column: 1 / -1; /* Ocupa toda la fila del grid */
     text-align: center; /* Centra el texto del título */
-    font-size: 24px; /* Tamaño más destacado */
+    font-size: 2rem; /* Tamaño más destacado */
     color: #444; /* Color más oscuro para el título */
     margin-bottom: 15px; /* Espacio debajo del título */
     margin-top: 30px;
@@ -199,6 +199,7 @@ body {
     background-color: #f9f9f9; /* Fondo claro para destacar el contenido */
     padding: 8px; /* Reduce el espacio interno */
     margin: 0;
+    margin-top: 30px;
 }
 
 .corte img {
@@ -534,7 +535,7 @@ body {
 
 .novedades h1 {
     margin-bottom: 30px;
-    font-size: 2em;
+    font-size: 2rem;
     color: #444;
 }
 
