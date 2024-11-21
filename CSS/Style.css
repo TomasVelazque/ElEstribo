@@ -241,8 +241,8 @@ body {
 @media (max-width: 480px) {
     .cortes-container {
         grid-template-columns: repeat(1, 1fr); /* 1 elemento por fila */
-        padding: 0 20px; /* Más espacio horizontal */
-        max-width: 95%; /* Limita el ancho al 95% del viewport */
+        padding: 0 30px; /* Más espacio horizontal */
+        max-width: 100%; /* Limita el ancho al 95% del viewport */
     }
 
     .corte img {
@@ -250,11 +250,11 @@ body {
     }
 
     .corte h3 {
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .corte p {
-        font-size: 18px;
+        font-size: 16px;
     }
 
 }
