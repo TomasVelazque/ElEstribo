@@ -247,11 +247,15 @@ body {
     }
 
     .corte h3 {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .corte p {
-        font-size: 12px;
+        font-size: 14px;
+    }
+
+    .corte{
+        width: 120px;
     }
 }
 
