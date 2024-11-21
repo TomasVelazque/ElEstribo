@@ -229,6 +229,7 @@ body {
 @media (max-width: 768px) {
     .cortes-container {
         grid-template-columns: repeat(2, 1fr); /* 2 elementos por fila */
+        padding: 0 15px; /* Aumenta el padding horizontal */
     }
 
     .corte img {
@@ -240,6 +241,8 @@ body {
 @media (max-width: 480px) {
     .cortes-container {
         grid-template-columns: repeat(1, 1fr); /* 1 elemento por fila */
+        padding: 0 20px; /* Más espacio horizontal */
+        max-width: 95%; /* Limita el ancho al 95% del viewport */
     }
 
     .corte img {
