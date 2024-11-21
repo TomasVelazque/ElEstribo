@@ -138,10 +138,13 @@ body {
 }
 
 .header-content p {
-    font-size: 1rem; /* Tamaño adaptable */
-    color: #c5c5c5;
-    padding: 0 15px; /* Reduce el padding en pantallas pequeñas */
-    margin-bottom: 20px;
+    font-size: 1rem; /* Tamaño del texto */
+    color: #c5c5c5; /* Color del texto */
+    padding: 0 15px; /* Espaciado horizontal */
+    margin: 0 auto; /* Centra el texto horizontalmente */
+    max-width: 700px; /* Limita el ancho máximo del texto */
+    line-height: 1.6; /* Espaciado entre líneas */
+    text-align: center; /* Centra el texto */
 }
 
 /* Media queries para pantallas pequeñas */
