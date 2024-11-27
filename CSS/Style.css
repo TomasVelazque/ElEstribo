@@ -135,6 +135,20 @@ body {
     color: #f9fafc;
     text-transform: uppercase;
     margin-bottom: 20px;
+    opacity: 0; /* Hace el texto invisible inicialmente */
+    transform: translateY(20px); /* Posiciona el texto un poco más abajo */
+    animation: fadeInSlideUp 1.5s ease-out forwards; /* Aplica la animación */
+}
+
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .header-content p {
@@ -145,6 +159,24 @@ body {
     max-width: 700px; /* Limita el ancho máximo del texto */
     line-height: 1.6; /* Espaciado entre líneas */
     text-align: center; /* Centra el texto */
+    animation: bounceIn 2s ease-out forwards;
+    transform: translateY(-50px); /* Posición inicial */
+    opacity: 0; /* Ocultar inicialmente */
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0); /* Posición final */
+        opacity: 1; /* Totalmente visible */
+    }
 }
 
 /* Media queries para pantallas pequeñas */
