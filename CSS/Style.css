@@ -219,6 +219,19 @@ body {
     color: #444; /* Color más oscuro para el título */
     margin-bottom: 15px; /* Espacio debajo del título */
     margin-top: 30px;
+    
+    animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .corte {
@@ -232,6 +245,32 @@ body {
     padding: 8px; /* Reduce el espacio interno */
     margin: 0;
     margin-top: 30px;
+
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeInProduct 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeInProduct {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Agregamos un retraso progresivo para cada producto */
+.corte:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.corte:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.corte:nth-child(3) {
+    animation-delay: 0.3s;
 }
 
 .corte img {
