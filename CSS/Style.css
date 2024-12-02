@@ -205,11 +205,10 @@ body {
 
 .cortes-container {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 6 elementos por fila */
-    gap: 10px; /* Espaciado vertical entre filas */
-    padding: 0px 10px; /* Menos espacio alrededor del contenedor */
-    justify-content: center; /* Centra los elementos horizontalmente */
-    justify-items: center; /* Centra cada cuadro individualmente */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta el número de columnas automáticamente */
+    gap: 15px; /* Reduce la separación entre elementos */
+    padding: 0 20px; /* Ajusta el espacio alrededor del contenedor */
+    justify-content: center; /* Centra el contenido */
 }
 
 .cortes-container h1 {
@@ -219,7 +218,7 @@ body {
     color: #444; /* Color más oscuro para el título */
     margin-bottom: 15px; /* Espacio debajo del título */
     margin-top: 30px;
-    
+
     animation: fadeInUp 1s ease-in-out;
 }
 
