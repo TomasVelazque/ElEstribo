@@ -319,7 +319,7 @@ body {
     }
 
     .corte img {
-        height: 120px; /* Ajusta la altura de las imágenes */
+        height: 150px; /* Ajusta la altura de las imágenes */
     }
 }
 
@@ -332,7 +332,7 @@ body {
     }
 
     .corte img {
-        height: 100px; /* Ajusta la altura de las imágenes */
+        height: 130px; /* Ajusta la altura de las imágenes */
     }
 
     .corte h3 {
@@ -643,6 +643,8 @@ body {
     box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
     text-align: center;
     padding: 15px;
+    margin: 0 auto;
+    max-width: 100%;
     width: 300px;
     transition: transform 0.3s ease;
 
@@ -676,3 +678,4 @@ body {
     font-size: 0.9em;
     color: #000000;
 }
+
