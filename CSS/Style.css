@@ -332,7 +332,7 @@ body {
     }
 
     .corte img {
-        height: 130px; /* Ajusta la altura de las imágenes */
+        height: 180px; /* Ajusta la altura de las imágenes */
     }
 
     .corte h3 {
@@ -670,6 +670,7 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     object-fit: cover;
 }
+
 .publicacion h2 {
     font-size: 1.2em;
     color: #ffffff;
@@ -682,11 +683,6 @@ body {
     color: #ffffff;
 }
 
-@media (max-width: 480px) {
-    .publicacion img{
-        height: 170px;
-    }
-}
 
 .horarios {
     padding: 20px;
