@@ -682,6 +682,11 @@ body {
     color: #ffffff;
 }
 
+@media (max-width: 480px) {
+    .publicacion img{
+        height: 170px;
+    }
+}
 
 .horarios {
     padding: 20px;
