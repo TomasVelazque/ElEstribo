@@ -840,3 +840,7 @@ body {
 .close:hover {
     color: #ff9900;
 }
+
+#reactions { 
+    display: none !important;
+}
