@@ -194,6 +194,27 @@
         <span class="close">&times;</span>
         <img class="lightbox-imagen" src="" alt="">
     </div>
+
+    <div id="disqus_thread"></div>  
+    <script>
+    /**
+    * REPLACE THE VARIABLES BELOW WITH YOUR INFORMATION.
+    */
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // URL de la página
+        this.page.identifier = 'pagina-comentarios'; // Identificador único para la página
+    };
+
+    (function() {  // Carga el script de Disqus
+        var d = document, s = d.createElement('script');
+        s.src = 'https://elestribo.disqus.com/embed.js'; // Reemplaza 'TUSITIO' con tu shortname
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Por favor, habilita JavaScript para ver los <a href="https://disqus.com/?ref_noscript">comentarios por Disqus.</a></noscript>
+
+
     <br><br><br>
     <footer class="footer">
         <div class="footer-container">
