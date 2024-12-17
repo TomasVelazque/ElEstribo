@@ -355,6 +355,7 @@ body {
 .contacto-container h1 {
     margin-bottom: 20px;
     font-size: 2rem;
+    color: #fefefe;
 }
 
 .contacto-container .map-container {
@@ -375,6 +376,7 @@ body {
 h2 {
     margin-top: 40px;
     font-size: 1.5rem;
+    color: #fefefe;
 }
 
 .social-icons {
@@ -387,7 +389,7 @@ h2 {
 
 .social-icon {
     font-size: 1.2rem;
-    color: #333;
+    color: #ffffff;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -473,10 +475,11 @@ h2 {
 
 /* Estilo para el footer */
 .footer {
-    background-color: #333; /* Fondo oscuro */
+    background-color: #000000; /* Fondo oscuro */
     color: #fff; /* Texto blanco */
     padding: 20px;
     text-align: center;
+    border-top: 2px solid #ffffff; /* Línea blanca que separa el footer */
 }
 
 .footer-container {
@@ -603,13 +606,13 @@ h2 {
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #ffffff;
+    background-color: #000000;
     color: #333;
 }
 
 .novedades { 
     max-width: 900px;
-    background-color: #ffffff; /* Fondo gris claro */
+    background-color: #000000; /* Fondo gris claro */
     margin-top: 20px;
     padding: 20px;
     text-align: center;
@@ -621,7 +624,7 @@ body {
     grid-column: 1 / -1; /* Ocupa toda la fila del grid */
     text-align: center; /* Centra el texto del título */
     font-size: 2rem; /* Tamaño más destacado */
-    color: #000000; /* Color más oscuro para el título */
+    color: #fefefe; /* Color más oscuro para el título */
     margin-bottom: 15px; /* Espacio debajo del título */
     margin-top: 30px;
 }
@@ -629,7 +632,7 @@ body {
 /* Contenedor de publicaciones */
 .publicaciones {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dinámico */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Dinámico */
     gap: 10px; /* Espacio entre publicaciones */
     margin: 0 auto; /* Centrado */
     justify-content: center;
@@ -637,8 +640,8 @@ body {
 
 /* Estilo de cada publicación */
 .publicacion {
-    background: #ffffff; /* Fondo blanco */
-    border: 2px solid #000000;
+    background: #000000; /* Fondo blanco */
+    border: 2px solid #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
     text-align: center;
@@ -669,13 +672,99 @@ body {
 }
 .publicacion h2 {
     font-size: 1.2em;
-    color: #000000;
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
 .publicacion p {
     margin-top: 10px;
     font-size: 0.9em;
-    color: #000000;
+    color: #ffffff;
 }
 
+
+.horarios {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+}
+
+.horarios-content {
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+    border: 2px solid #fff; /* Borde blanco */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #000000;
+    color: #fff;
+}
+
+/* Título */
+.horarios-content h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de días */
+.horarios-carniceria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+/* Día individual */
+.dia {
+    background-color: #000000;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.dia:hover {
+    transform: scale(1.05);
+    background-color: #555;
+}
+
+.dia h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #f8f9fa;
+}
+
+.dia p {
+    margin: 10px 0 0;
+    font-size: 1em;
+    color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .horarios-content h2 {
+        font-size: 1.5em;
+    }
+
+    .horarios-carniceria {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .horarios-content {
+        padding: 10px;
+    }
+
+    .dia h3 {
+        font-size: 1em;
+    }
+
+    .dia p {
+        font-size: 0.9em;
+    }
+}
