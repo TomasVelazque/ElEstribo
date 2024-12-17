@@ -256,7 +256,7 @@ body {
 /* Iframe para los videos */
 .corte img {
     width: 100%;
-    height: 150px;
+    height: 170px;
     border: none;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
