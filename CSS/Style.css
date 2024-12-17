@@ -112,7 +112,7 @@ body {
     background-image: linear-gradient(
         rgba(0, 0, 0, 0.7),
         rgba(0, 0, 0, 0.7)),
-        url(../Img/FondoCarniceria.jpg);
+        url(../Img/fondo\ carne.jpg);
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -202,26 +202,73 @@ body {
 
 }
 
-
-.cortes-container {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 6 elementos por fila */
-    gap: 10px; /* Espaciado vertical entre filas */
-    padding: 0px 10px; /* Menos espacio alrededor del contenedor */
-    justify-content: center; /* Centra los elementos horizontalmente */
-    justify-items: center; /* Centra cada cuadro individualmente */
+.cortes{
+    width: 100%;
+    background-color: #000000; /* Fondo gris claro */
+    padding: 20px;
+    margin-top: 0px;
 }
 
-.cortes-container h1 {
+.cortes h1{
     grid-column: 1 / -1; /* Ocupa toda la fila del grid */
     text-align: center; /* Centra el texto del título */
     font-size: 2rem; /* Tamaño más destacado */
-    color: #444; /* Color más oscuro para el título */
+    color: #ffffff; /* Color más oscuro para el título */
     margin-bottom: 15px; /* Espacio debajo del título */
     margin-top: 30px;
 
     animation: fadeInUp 1s ease-in-out;
 }
+
+.cortes-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Máximo 5 videos por fila */
+    gap: 20px; /* Espacio entre videos */
+    max-width: 1200px;
+    margin: 0 auto; /* Centrado */
+}
+
+.corte{
+    background: #000000; /* Fondo blanco */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease;
+
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeInProduct 0.8s ease-in-out forwards;
+}
+
+.corte:hover {
+    transform: translateY(-5px);
+}
+
+/* Título del ejercicio */
+.corte h3 {
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* Iframe para los videos */
+.corte img {
+    width: 100%;
+    height: 150px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Descripción */
+.corte p {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #ffffff;
+}
+
 
 @keyframes fadeInUp {
     from {
@@ -234,22 +281,6 @@ body {
     }
 }
 
-.corte {
-    width: 100%; /* Ajusta al espacio disponible dentro de la columna */
-    max-width: 180px; /* Define un ancho máximo para los cuadros */
-    border: 1px solid #ccc; /* Opcional: un borde para cada cuadro */
-    border-radius: 8px; /* Bordes redondeados */
-    overflow: hidden; /* Asegura que nada sobresalga del cuadro */
-    text-align: center; /* Centra el contenido */
-    background-color: #f9f9f9; /* Fondo claro para destacar el contenido */
-    padding: 8px; /* Reduce el espacio interno */
-    margin: 0;
-    margin-top: 30px;
-
-    opacity: 0;
-    transform: scale(0.9);
-    animation: fadeInProduct 0.8s ease-in-out forwards;
-}
 
 @keyframes fadeInProduct {
     from {
@@ -272,26 +303,6 @@ body {
 .corte:nth-child(3) {
     animation-delay: 0.3s;
 }
-
-.corte img {
-    width: 100%; /* La imagen se ajusta al ancho del cuadro */
-    height: 150px; /* Ajusta esta altura según prefieras */
-    object-fit: cover; /* Ajusta la imagen sin deformarla */
-    border-bottom: 1px solid #ccc; /* Línea divisoria entre imagen y texto */
-}
-
-.corte h3 {
-    margin: 8px 0 4px; /* Reduce espaciado del título */
-    font-size: 16px;
-    color: #333;
-}
-
-.corte p {
-    font-size: 13px; /* Tamaño más compacto */
-    color: #666;
-    margin: 0; /* Elimina márgenes adicionales */
-}
-
 
 /* Media queries para pantallas medianas (tablets) */
 @media (max-width: 1024px) {
