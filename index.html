@@ -82,7 +82,6 @@
                 <h3>Costillas</h3>
                 <p>Disfruta del sabor auténtico y la jugosidad de nuestras costillas de carne, seleccionadas cuidadosamente para brindarte la mejor calidad.</p>
             </div>
-            <!-- Repetir más cortes -->
         </div>
         <br><br><br>
     </section>
@@ -168,6 +167,33 @@
                 </a>
             </div>
     </section>
+    <section class="galeria">
+        <h2>Galería de Imágenes</h2>
+        <div class="galeria-contenedor">
+            <!-- Imágenes en la galería -->
+            <div class="imagen">
+                <img src="Img/AsadoElEstribo.jpeg" alt="Imagen 1">
+            </div>
+            <div class="imagen">
+                <img src="Img/fotocarniceria.jpeg" alt="Imagen 2">
+            </div>
+            <div class="imagen">
+                <img src="Img/WhatsApp Image 2024-12-03 at 13.15.05 (1).jpeg" alt="Imagen 3">
+            </div>
+            <div class="imagen">
+                <img src="Img/Comida1.jpeg" alt="Imagen 3">
+            </div>
+            <div class="imagen">
+                <img src="Img/Comida2.jpeg" alt="Imagen 3">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Lightbox para ver imagen en grande -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-imagen" src="" alt="">
+    </div>
     <br><br><br>
     <footer class="footer">
         <div class="footer-container">
@@ -188,21 +214,7 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-
-    <script>
-        // Selecciona todos los enlaces del menú y el checkbox del menú hamburguesa
-        const menuLinks = document.querySelectorAll('.navbar ul li a');
-        const menuToggle = document.querySelector('#menu-toggle');
-    
-        // Agrega un evento de clic a cada enlace
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                // Cierra el menú al desmarcar el checkbox
-                if (menuToggle.checked) {
-                    menuToggle.checked = false;
-                }
-            });
-        });
-    </script>
+    <script src="JS/menu.js"></script>
+    <script src="JS/imagenes.js"></script>
 </body>
 </html>
