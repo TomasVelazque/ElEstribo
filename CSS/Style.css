@@ -528,4 +528,24 @@ footer {
     margin-top: 0;         
   }
 
+  .whatsapp-icon{
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+}
+
+@media screen and (max-width: 320px) {
+    .contacto {   
+        padding: 4rem 0; 
+    }
+
+    .galeria {
+        padding: 550px 0 50px;  
+    }
+
+    .galeria h2 {
+        margin-top: 0;         
+    }
 }
