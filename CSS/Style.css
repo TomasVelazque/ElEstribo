@@ -1,816 +1,367 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
+body, html{
     user-select: none;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: black;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-}
-
-/* Menú hamburguesa */
-.menu {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 0;
-    z-index: 1000;
-}
-
-.navbar ul {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    transition: transform 0.3s ease;
-}
-
-.navbar ul li {
-    align-items: center;
-    margin: 0 10px;
-}
-
-.navbar ul li a {
-    font-size: 16px;
-    padding: 10px 15px;
-    color: #fffdfc;
-    display: block;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.navbar ul li a:hover {
-    color: #ce967b;
-}
-
-/* Menú hamburguesa */
-.menu-icon {
-    display: none;
+.home-cont{
     flex-direction: column;
-    justify-content: space-between;
-    width: 25px;
-    height: 20px;
-    cursor: pointer;
-}
-
-.menu-icon span {
-    display: block;
-    height: 3px;
-    background-color: #fff;
-    border-radius: 2px;
-    transition: 0.3s;
-}
-
-/* Ocultar menú en móviles */
-#menu-toggle {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .menu-icon {
-        display: flex;
-    }
-
-    .navbar ul {
-        position: absolute;
-        top: 60px; /* Añadido un margen superior para evitar que cubra el contenido */
-        left: 0;
-        width: 100%; /* Asegura que ocupe todo el ancho */
-        height: 60vh; /* Ocupa toda la altura de la pantalla */
-        background-color: rgba(0, 0, 0, 0.9); /* Fondo negro con opacidad */
-        flex-direction: column; /* Enlaces apilados verticalmente */
-        align-items: center;
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        z-index: 1001; /* Asegura que esté sobre otros elementos, pero bajo el encabezado */
-        transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-
-    #menu-toggle:checked + .menu-icon + ul {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .navbar ul li {
-        margin: 15px 0; /* Espaciado vertical entre enlaces */
-    }
-
-}
-
-/* Estilos generales */
-.header {
-    background-image: linear-gradient(
-        rgba(0, 0, 0, 0.7),
-        rgba(0, 0, 0, 0.7)),
-        url(../Img/fondo\ carne.jpg);
-    background-position: center bottom;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://santoasado.com/wp-content/uploads/2021/02/Asado_Back.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    text-align: center; /* Centra el texto en pantallas pequeñas */
-    padding: 20px; /* Espaciado interno */
-    z-index: 999; /* Asegura que la cabecera esté encima del menú */
+    background-position: center;
+    height: 100vh;
+    width: 100%;
 }
 
-.header-content {
+.home-cont h1{
+    font-size: 5.0rem;
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 5px;
+    text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
+    }
+    100% {
+        text-shadow: 0 0 10px black, 0 0 20px black, 0 0 40px black, 0 0 80px black, 0 0 160px black;
+    }
+}
+
+.home-cont p{
+    max-width: 1400px;
+    font-size: 1.6rem;
+    color: white;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
     text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlide 7.5s ease-in forwards infinite;
 }
 
-.header-content h1 {
-    font-size: 3rem; /* Tamaño adaptable */
-    line-height: 1.2;
-    color: #f9fafc;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    opacity: 0; /* Hace el texto invisible inicialmente */
-    transform: translateY(20px); /* Posiciona el texto un poco más abajo */
-    animation: fadeInSlideUp 1.5s ease-out forwards; /* Aplica la animación */
-}
-
-@keyframes fadeInSlideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
+@keyframes fadeSlide {
+    to{
+      opacity: 1;
+      transform: translateY(0px);
     }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.header-content p {
-    font-size: 1rem; /* Tamaño del texto */
-    color: #c5c5c5; /* Color del texto */
-    padding: 0 15px; /* Espaciado horizontal */
-    margin: 0 auto; /* Centra el texto horizontalmente */
-    max-width: 700px; /* Limita el ancho máximo del texto */
-    line-height: 1.6; /* Espaciado entre líneas */
-    text-align: center; /* Centra el texto */
-    animation: bounceIn 2s ease-out forwards;
-    transform: translateY(-50px); /* Posición inicial */
-    opacity: 0; /* Ocultar inicialmente */
-}
-
-@keyframes bounceIn {
-    0% {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    60% {
-        transform: translateY(10px);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(0); /* Posición final */
-        opacity: 1; /* Totalmente visible */
-    }
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 480px) {
-
-    .header-content h1 {
-        font-size: 2rem;
-        margin-top: 20px;    
-    }
-
-    .header-content p {
-        font-size: 0.8rem;
-    }
-
-    .btn-1 {
-        font-size: 0.8rem;
-        padding: 8px 15px;
-    }
-
-    .menu-icon {
-        margin-top: 5px;
-    }
-
 }
 
 .cortes{
-    width: 100%;
-    background-color: #000000; /* Fondo gris claro */
-    padding: 20px;
-    margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+  background-color: black;
+  color: white;
 }
 
-.cortes h1{
-    grid-column: 1 / -1; /* Ocupa toda la fila del grid */
-    text-align: center; /* Centra el texto del título */
-    font-size: 2rem; /* Tamaño más destacado */
-    color: #ffffff; /* Color más oscuro para el título */
-    margin-bottom: 15px; /* Espacio debajo del título */
-    margin-top: 30px;
-
-    animation: fadeInUp 1s ease-in-out;
+.cortes h2{
+  font-size: 2.5rem;
+  color: white;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 2px;
 }
 
-.cortes-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Máximo 5 videos por fila */
-    gap: 20px; /* Espacio entre videos */
-    max-width: 1200px;
-    margin: 0 auto; /* Centrado */
+.cortes-cont{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  width: 1440px;
+  border: 8px solid black;
+  gap: 10px;
 }
 
-.corte{
-    background: #000000; /* Fondo blanco */
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+.product-card{
+  margin-top: 20px;
+  width: 250px;
+  height: auto;
+  border: 4px solid white;
+  background-color: rgb(0, 0, 0);
+  margin-bottom: 20px;
+}
+
+.product-card img{
+  width: 250px;
+  height: 180px;
+}
+
+.product-card h3{
+  font-size: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  height: 40px;
+}
+
+.product-card p{
+  font-size: 0.9rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.ofertas{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: white;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/AGBvw0pZbBh0RLlL/carniceria-8-AoPer9pBgjc34aNL.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.ofertas-cont{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  width: 1800px;
+  border: 8px solid transparent;
+  gap: 20px;
+}
+
+.ofertas-h2{
+  font-size: 2.5rem;
+  color: white;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 2px;
+}
+
+.oferta-card{
+  margin-top: 20px;
+  width: 350px;
+  height: auto;
+  border: 4px solid white;
+  background-color: rgb(0, 0, 0);
+  margin-bottom: 20px;
+}
+
+.oferta-card img{
+  width: 350px;
+  height: 450px;
+}
+
+.oferta-card h3{
+  font-size: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  height: 40px;
+}
+
+.horarios{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 70vh;
+  background-color: black;
+  color:white;
+}
+
+.horarios h2{
+  font-size: 2.5rem;
+  color: white;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.horarios-cont{
+  display: flex;
+  width: 1800px;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  border: 8px solid rgb(0, 0, 0);
+}
+
+
+.horarios-box{
+  margin-top: 20px;
+  width: 300px;
+  height: auto;
+  border: 8px solid white;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.horarios-box:hover{
+  transform: translateY(15px);
+  box-shadow: 0 15px 30px rgba(255, 255, 255, 0.4);
+}
+
+.historia-h2{
+  color: white;
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 2px;
+}
+
+.historia h2{
+  text-align: center;
+  font-size: 2.5rem;
+  color: rgb(255, 255, 255);
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 2px;
+}
+
+.historia{
+  display: flex;
+}
+
+.historia-1{
+  width: 50%;
+  padding: 100px 250px 100px 100px;
+  background-color: rgb(0, 0, 0);
+}
+
+.historia-2{
+  background-image: url(../Img/FondoHistoria1.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 77%;
+  height: 100vh;
+}
+
+.historia-3{
+  background-image: url(../Img/FondoHistoria222.jpeg);
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 77%;
+  height: 100vh;
+}
+
+.historia-1 h2{
+    text-transform: uppercase;
+    color: white;
     text-align: center;
-    padding: 15px;
-    transition: transform 0.3s ease;
-
-    opacity: 0;
-    transform: scale(0.9);
-    animation: fadeInProduct 0.8s ease-in-out forwards;
+    font-size: 2.5rem;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
 }
 
-.corte:hover {
-    transform: translateY(-5px);
-}
-
-/* Título del ejercicio */
-.corte h3 {
-    font-size: 1.2em;
-    color: #ffffff;
-    margin-bottom: 10px;
-}
-
-/* Iframe para los videos */
-.corte img {
-    width: 100%;
-    height: 170px;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Descripción */
-.corte p {
-    margin-top: 10px;
-    font-size: 0.9em;
-    color: #ffffff;
-}
-
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-@keyframes fadeInProduct {
-    from {
-        opacity: 0;
-        transform: scale(0.9) translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
-
-/* Agregamos un retraso progresivo para cada producto */
-.corte:nth-child(1) {
-    animation-delay: 0.1s;
-}
-.corte:nth-child(2) {
-    animation-delay: 0.2s;
-}
-.corte:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-/* Media queries para pantallas medianas (tablets) */
-@media (max-width: 1024px) {
-    .cortes-container {
-        grid-template-columns: repeat(4, 1fr); /* 4 elementos por fila */
-    }
-}
-
-/* Media queries para pantallas pequeñas (móviles grandes) */
-@media (max-width: 768px) {
-    .cortes-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 elementos por fila */
-        padding: 0 15px; /* Aumenta el padding horizontal */
-    }
-
-    .corte img {
-        height: 150px; /* Ajusta la altura de las imágenes */
-    }
-}
-
-/* Media queries para pantallas muy pequeñas (móviles pequeños) */
-@media (max-width: 480px) {
-    .cortes-container {
-        grid-template-columns: repeat(1, 1fr); /* 1 elemento por fila */
-        padding: 0 30px; /* Más espacio horizontal */
-        max-width: 100%; /* Limita el ancho al 95% del viewport */
-    }
-
-    .corte img {
-        height: 180px; /* Ajusta la altura de las imágenes */
-    }
-
-    .corte h3 {
-        font-size: 20px;
-    }
-
-    .corte p {
-        font-size: 16px;
-    }
-
-}
-
-
-/* Estilo para la sección de contacto */
-.contacto {
-    text-align: center; /* Centra todo el contenido dentro de la sección */
-    padding: 20px;
-}
-
-.contacto-container h1 {
-    margin-bottom: 20px;
-    font-size: 2rem;
-    color: #fefefe;
-}
-
-.contacto-container .map-container {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center; /* Centra el mapa horizontalmente */
-    align-items: center;     /* Centra el mapa verticalmente si el contenedor tiene más altura */
-}
-
-.contacto-container iframe {
-    width: 100%;
-    max-width: 1500px; /* Ajusta el ancho máximo del mapa */
-    height: 450px;
-    border: none; /* Elimina el borde */
-    border-radius: 8px; /* Bordes redondeados para mayor estética */
-}
-
-h2 {
-    margin-top: 40px;
-    font-size: 1.5rem;
-    color: #fefefe;
-}
-
-.social-icons {
-    display: flex;
-    justify-content: center; /* Centra los íconos horizontalmente */
-    align-items: center;
-    gap: 20px; /* Espaciado entre los íconos */
-    margin-top: 20px;
-}
-
-.social-icon {
-    font-size: 1.2rem;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.social-icon:hover {
-    color: #0073e6; /* Color al pasar el ratón sobre el icono */
-}
-
-.social-icon i {
-    margin-right: 10px; /* Espacio entre el ícono y el texto */
-}
-
-/* Media query para pantallas de 768px o menos */
-@media (max-width: 768px) {
-    .contacto-container iframe {
-        height: 350px; /* Reduce la altura del mapa en pantallas medianas */
-    }
-
-    .social-icons {
-        gap: 15px; /* Reduce el espaciado entre los íconos en pantallas medianas */
-        justify-content: center;
-    }
-
-    .social-icon {
-        font-size: 1rem; /* Reduce el tamaño de los íconos */
-        align-items: center;
-    }
-}
-
-/* Media query para pantallas de 480px o menos (teléfonos pequeños) */
-@media (max-width: 480px) {
-    .contacto-container iframe {
-        height: 250px; /* Reduce aún más la altura del mapa para pantallas pequeñas */
-        max-width: 100%; /* Asegura que el mapa ocupe todo el ancho disponible */
-        justify-content: center;
-        align-items: center;
-    }
-
-    h1 {
-        font-size: 1.5rem; /* Reduce el tamaño del título */
-    }
-
-    h2 {
-        font-size: 1.2rem; /* Reduce el tamaño de la cabecera de redes sociales */
-    }
-
-    .social-icons {
-        flex-direction: column; /* Acomoda los íconos de redes sociales en una columna */
-        gap: 10px; /* Reduce el espaciado entre los íconos en pantallas muy pequeñas */
-        justify-content: center;
-    }
-
-    .social-icon {
-        font-size: 1rem; /* Reduce el tamaño de los íconos */
-        align-items: center;
-    }
-}
-
-/* Media query para pantallas de 320px o menos (teléfonos pequeños muy estrechos) */
-@media (max-width: 320px) {
-    .contacto-container iframe {
-        height: 200px; /* Ajusta la altura del mapa para pantallas más pequeñas */
-    }
-
-    h1 {
-        font-size: 1.2rem; /* Ajusta el tamaño del título para pantallas muy pequeñas */
-    }
-
-    h2 {
-        font-size: 1rem; /* Ajusta el tamaño de la cabecera de redes sociales */
-    }
-
-    .social-icons {
-        gap: 8px; /* Reduce aún más el espaciado entre los íconos */
-    }
-
-    .social-icon {
-        font-size: 0.9rem; /* Ajusta el tamaño de los íconos */
-    }
-}
-
-/* Estilo para el footer */
-.footer {
-    background-color: #000000; /* Fondo oscuro */
-    color: #fff; /* Texto blanco */
-    padding: 20px;
+.historia-1 p{
+    text-transform: uppercase;
+    color: white;
     text-align: center;
-    border-top: 2px solid #ffffff; /* Línea blanca que separa el footer */
+    font-size: 1.4rem;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
 }
 
-.footer-container {
-    display: flex;
-    flex-direction: column; /* Establece el contenido en columnas */
-    align-items: center; /* Centra el contenido */
-    gap: 20px; /* Espaciado entre los bloques */
+.contacto{
+  display: flex; 
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  color: white;
 }
 
-.footer-section {
-    font-size: 1rem;
+.direccion h2{
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 2px;
+  margin-top: 100px;
 }
 
-.footer-section  .social-icon {
-    font-size: 1.5rem;
-    color: #ffffff;
-    text-decoration: none;
-    margin: 10px;
-    transition: color 0.3s ease;
+.direccion iframe{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
-.footer-section .social-icon:hover {
-    color: #0073e6; /* Color al pasar el ratón sobre el icono */
+.contacto-cont{
+  height: 100vh;
 }
 
-.developer a {
-    color: #ff9900; /* Color del enlace al portafolio */
-    text-decoration: none;
-    font-weight: bold;
+.redes h2{
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 2px;
 }
 
-.developer a:hover {
-    text-decoration: underline; /* Subraya el enlace al pasar el ratón */
+.redes a{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 
-/* Media Queries para dispositivos pequeños */
-@media (max-width: 768px) {
-    /* Ajustes para pantallas pequeñas (tabletas y teléfonos) */
-    .footer-container {
-        flex-direction: column; /* En pantallas pequeñas, los elementos se apilan verticalmente */
-        align-items: center; /* Asegura que el contenido esté centrado */
-        gap: 15px; /* Menos espacio entre los bloques */
-    }
-
-    .footer-section {
-        font-size: 0.9rem; /* Reducción del tamaño de la fuente para pantallas más pequeñas */
-    }
-
-    .footer-section .social-icon {
-        font-size: 1.3rem; /* Los íconos se hacen más pequeños para caber mejor */
-        margin: 8px; /* Menor margen entre íconos */
-    }
-
-    .developer a {
-        font-size: 0.9rem; /* Reduce el tamaño del texto para el enlace al portafolio */
-    }
+.redes i{
+  font-size: 60px;
 }
 
-/* Media Queries para pantallas muy pequeñas */
-@media (max-width: 480px) {
-    /* Ajustes para pantallas de teléfonos pequeños */
-    .footer-container {
-        padding: 10px; /* Reduce el padding */
-    }
-
-    .footer-section {
-        font-size: 0.8rem; /* Hace el texto más pequeño en pantallas muy pequeñas */
-    }
-
-    .footer-section .social-icon {
-        font-size: 1.1rem; /* Aún más pequeños los íconos */
-        margin: 5px; /* Ajuste del margen entre íconos */
-    }
-
-    .developer a {
-        font-size: 0.8rem; /* Ajuste del tamaño del enlace para pantallas pequeñas */
-    }
-}
-
-/* Estilo para el icono de WhatsApp */
-.whatsapp-icon {
-    position: fixed; /* Posiciona el icono de forma fija */
-    bottom: 20px; /* Lo coloca 20px por encima del borde inferior */
-    right: 20px; /* Lo coloca 20px a la derecha del borde */
-    background-color: #25d366; /* Color de fondo característico de WhatsApp */
-    border-radius: 50%; /* Hace el icono completamente circular */
-    padding: 15px; /* Ajustamos el padding para hacerlo más proporcional */
-    color: white; /* Color blanco para el icono */
-    font-size: 2.5rem; /* Tamaño del icono más grande */
-    width: 70px; /* Establece un ancho fijo para asegurar la forma circular */
-    height: 70px; /* Establece una altura fija igual al ancho */
-    display: flex;
-    justify-content: center; /* Centra el icono horizontalmente */
-    align-items: center; /* Centra el icono verticalmente */
-    transition: background-color 0.3s ease; /* Efecto de transición al pasar el ratón */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para que resalte */
-}
-
-.whatsapp-icon:hover {
-    background-color: #128c7e; /* Cambia el color al pasar el ratón */
-}
-
-/* Media Query para dispositivos pequeños */
-@media (max-width: 768px) {
-    .whatsapp-icon {
-        width: 60px; /* Reduce el tamaño del icono */
-        height: 60px; /* Ajusta la altura para mantener la proporción */
-        padding: 12px; /* Ajusta el padding */
-        font-size: 2rem; /* Reduce el tamaño del icono */
-    }
-}
-
-/* Media Query para pantallas muy pequeñas */
-@media (max-width: 480px) {
-    .whatsapp-icon {
-        width: 50px; /* Reduce aún más el tamaño del icono */
-        height: 50px; /* Ajusta la altura */
-        padding: 10px; /* Ajuste adicional */
-        font-size: 1.8rem; /* Ajuste adicional en pantallas muy pequeñas */
-    }
-}
-
-/* Reset básico */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000000;
-    color: #333;
-}
-
-.novedades { 
-    max-width: 900px;
-    background-color: #000000; /* Fondo gris claro */
-    margin-top: 20px;
-    padding: 20px;
-    text-align: center;
-    align-items: center;
-    margin: 0 auto;
-}
-
-.novedades h1 {
-    grid-column: 1 / -1; /* Ocupa toda la fila del grid */
-    text-align: center; /* Centra el texto del título */
-    font-size: 2rem; /* Tamaño más destacado */
-    color: #fefefe; /* Color más oscuro para el título */
-    margin-bottom: 15px; /* Espacio debajo del título */
-    margin-top: 30px;
-}
-
-/* Contenedor de publicaciones */
-.publicaciones {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Dinámico */
-    gap: 10px; /* Espacio entre publicaciones */
-    margin: 0 auto; /* Centrado */
-    justify-content: center;
-}
-
-/* Estilo de cada publicación */
-.publicacion {
-    background: #000000; /* Fondo blanco */
-    border: 2px solid #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
-    text-align: center;
-    padding: 15px;
-    margin: 0 auto;
-    max-width: 100%;
-    width: 300px;
-    transition: transform 0.3s ease;
-
-    opacity: 0;
-    transform: scale(0.9);
-    animation: fadeInProduct 0.8s ease-in-out forwards;
-}
-
-.publicacion:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
-.publicacion img {
-    
-    width: 100%;
-    height: 150px;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    object-fit: cover;
-}
-
-.publicacion h2 {
-    font-size: 1.2em;
-    color: #ffffff;
-    margin-bottom: 10px;
-}
-
-.publicacion p {
-    margin-top: 10px;
-    font-size: 0.9em;
-    color: #ffffff;
-}
-
-
-.horarios {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000000;
-}
-
-.horarios-content {
-    width: 90%;
-    max-width: 1200px;
-    text-align: center;
-    border: 2px solid #fff; /* Borde blanco */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #000000;
-    color: #fff;
-}
-
-/* Título */
-.horarios-content h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-/* Contenedor de días */
-.horarios-carniceria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-/* Día individual */
-.dia {
-    background-color: #000000;
-    border: 2px solid #fff;
-    border-radius: 15px;
-    padding: 10px;
-    text-align: center;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    margin-bottom: 20px;
-}
-
-.dia:hover {
-    transform: scale(1.05);
-    background-color: #555;
-}
-
-.dia h3 {
-    margin: 0;
-    font-size: 1.2em;
-    color: #f8f9fa;
-}
-
-.dia p {
-    margin: 10px 0 0;
-    font-size: 1em;
-    color: #ddd;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .horarios-content h2 {
-        font-size: 1.5em;
-    }
-
-    .horarios-carniceria {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-}
-
-@media (max-width: 480px) {
-    .horarios-content {
-        padding: 10px;
-    }
-
-    .dia h3 {
-        font-size: 1em;
-    }
-
-    .dia p {
-        font-size: 0.9em;
-    }
-}
 
 .galeria {
-    text-align: center; /* Centra el título */
-    margin: 40px 0; /* Espaciado alrededor de la galería */
+    text-align: center;
+    margin: 40px 0;
 }
 
 .galeria h2 {
-    font-size: 2em;
-    margin-bottom: 20px; /* Espaciado debajo del título */
+    margin-top: 150px;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
 }
 
-/* Contenedor de la galería */
 .galeria-contenedor {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centra las imágenes */
-    gap: 20px; /* Espaciado entre las imágenes */
+    justify-content: center;
+    gap: 20px; 
 }
 
-/* Estilo para cada imagen */
 .imagen {
-    width: 300px; /* Ancho fijo para las imágenes */
-    height: 200px; /* Altura fija para las imágenes */
-    overflow: hidden; /* Oculta cualquier contenido que sobresalga */
-    border-radius: 10px; /* Bordes redondeados */
+    width: 300px; 
+    height: 200px; 
+    overflow: hidden;
+    border-radius: 10px; 
 }
 
-/* Estilo para las imágenes, para que se ajusten sin deformarse */
 .imagen img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que las imágenes se acoplen sin deformarse */
-    border-radius: 10px; /* Bordes redondeados para las imágenes */
+    object-fit: cover; 
+    border-radius: 10px; 
 }
 
 .imagen img:hover {
     transform: scale(1.05);
 }
 
-/* Estilos para el Lightbox */
 .lightbox {
-    display: none; /* Oculto por defecto */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
@@ -841,6 +392,140 @@ body {
     color: #ff9900;
 }
 
-#disqus_reactions { 
-    display: none !important;
+footer {
+  background-color: #000000;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.propietario{
+  color: rgb(71, 71, 255)
+}
+
+.programador{
+  color: orange;
+}
+
+.whatsapp-icon {
+    position: fixed; 
+    bottom: 20px;
+    right: 20px; 
+    background-color: #25d366; 
+    border-radius: 50%; 
+    padding: 15px; 
+    color: white; 
+    font-size: 2.5rem; 
+    width: 70px; 
+    height: 70px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    transition: background-color 0.3s ease; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-icon:hover {
+    background-color: #128c7e; 
+}
+
+
+
+
+
+
+
+
+
+/*RESPONSIVIDAD EN CELULARES*/
+
+@media (max-width: 480px) {
+  
+  .home-cont h1 {
+    font-size: 1.9rem;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+  .home-cont p {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+    width: 300px;
+    text-align: center;
+  }
+
+  .cortes-cont{
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .ofertas-cont{
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .oferta-card{
+    width: 300px;
+  }
+
+  .oferta-card img{
+    width: 300px;
+    height: auto;
+  }
+
+  .horarios{
+    height: auto;
+  }
+
+  .horarios-cont{
+    width: 300px;
+  }
+
+  .historia-1 {
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  .historia-1 p {
+    font-size: 0.8rem;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .historia-1 h2 {
+    font-size: 1.4rem;
+  }
+
+  
+  .historia-2{
+    width: 55%;
+    height: 800px; 
+  }
+
+  .historia-3{
+    width: 52%;
+    height: 800px;
+  }
+
+  .direccion h2{
+    font-size: 2rem;
+  }
+
+  .contacto {   
+    padding: 4rem 0; 
+  }
+
+  .galeria {
+    padding: 250px 0 50px;  
+  }
+
+  .galeria h2 {
+    margin-top: 0;         
+  }
+
 }
