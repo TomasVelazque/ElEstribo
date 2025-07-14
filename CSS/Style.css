@@ -37,8 +37,8 @@ body, html{
 }
 
 .home-cont p{
-    max-width: 1400px;
-    font-size: 1.6rem;
+    max-width: 1000px;
+    font-size: 1.2rem;
     color: white;
     overflow-wrap: break-word;
     word-wrap: break-word;
@@ -80,7 +80,8 @@ body, html{
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
-  width: 1440px;
+  width: 100%;
+  max-width: 1200px;
   border: 8px solid black;
   gap: 10px;
 }
@@ -132,7 +133,8 @@ body, html{
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
-  width: 1800px;
+  max-width: 1200px;
+  width: 100%;
   border: 8px solid transparent;
   gap: 20px;
 }
@@ -184,7 +186,8 @@ body, html{
 
 .horarios-cont{
   display: flex;
-  width: 1800px;
+  max-width: 1200px;
+  width: 100%;
   align-content: center;
   text-align: center;
   justify-content: center;
